@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MobileComponent} from './mobile.component';
-import {NavBarModule} from '../../../shared/nav-bar/nav-bar.module';
-import {SearchBarModule} from '../../../shared/search-bar/search-bar.module';
+import {TobBarModule} from '../../../shared/tob-bar/tob-bar.module';
 import {ViewPortModule} from '../../../shared/view-port/view-port.module';
 import {SideNavModule} from '../../../shared/side-nav/side-nav.module';
 
@@ -12,10 +11,10 @@ import {SideNavModule} from '../../../shared/side-nav/side-nav.module';
   exports: [MobileComponent],
   imports: [
     CommonModule,
-    NavBarModule,
-    SearchBarModule,
+    TobBarModule,
     ViewPortModule,
-    SideNavModule
+    SideNavModule,
+    TobBarModule
   ]
 })
 export class MobileModule {

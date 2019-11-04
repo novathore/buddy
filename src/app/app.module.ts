@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MainViewModule} from './views/main-view.module';
+import {AppOverlayModule} from './lib/overlay/overlay.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {MainViewModule} from './views/main-view.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MainViewModule
+    MainViewModule,
+    AppOverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

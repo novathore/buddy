@@ -1,11 +1,11 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-search-bar',
-  templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.less']
+  selector: 'app-top-bar',
+  templateUrl: './top-bar.component.html',
+  styleUrls: ['./top-bar.component.less']
 })
-export class SearchBarComponent {
+export class TobBarComponent {
   @Input() displayedText: string;
   @Output() onClick = new EventEmitter();
 

@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SearchBarComponent} from './search-bar.component';
+import {TobBarComponent} from './tob-bar.component';
 import {MatIconModule} from '@angular/material';
 
 
 @NgModule({
-  declarations: [SearchBarComponent],
-  exports: [SearchBarComponent],
+  declarations: [TobBarComponent],
+  exports: [TobBarComponent],
   imports: [
     CommonModule,
     MatIconModule
   ]
 })
-export class SearchBarModule {
+export class TobBarModule {
 }
