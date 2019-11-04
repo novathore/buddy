@@ -15,7 +15,10 @@ export class MobileComponent {
   private componentData$ = new ReplaySubject<string>(1);
 
   public showSideBar() {
-    this.overlay.dispatchOverlay({dispatchedComponent: SideNavComponent, bindings: this.componentData$});
-    this.componentData$.next('foo')
+    const sideBar = this.overlay.dispatchOverlay({
+      dispatchedComponent: SideNavComponent
+    });
+    sideBar.instance.asSideBar = true;
+    // sideBar.instance.someOutput.subscribe(val => console.log(val));
   }
 }

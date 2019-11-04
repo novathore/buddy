@@ -1,32 +1,22 @@
-import {AfterViewInit, ChangeDetectorRef, Component, Inject, OnDestroy, Optional} from '@angular/core';
-import {BehaviorSubject, ReplaySubject} from 'rxjs';
-import {data} from '../../lib/overlay/overlay.service';
-import {takeUntil} from 'rxjs/operators';
+import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.less']
 })
-export class SideNavComponent implements AfterViewInit, OnDestroy {
-  public displayedData: string;
-  private destroy$ = new BehaviorSubject(false);
+export class SideNavComponent implements OnInit {
+  @Input() someText;
+  @Input() asSideBar: boolean = false;
+  @Output() someOutput = new EventEmitter();
 
-  constructor(
-    @Optional() @Inject(data) private data$: ReplaySubject<string>,
-    private cdr: ChangeDetectorRef
-  ) {}
+  @HostBinding('class.sidebar') isSideBar: boolean = false;
+  @HostBinding('class.animate') init: boolean = false;
 
-  ngAfterViewInit(): void {
-    this.data$.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe((val) => {
-      this.displayedData = val;
-      this.cdr.markForCheck();
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next(true);
+  ngOnInit(): void {
+    this.isSideBar = this.asSideBar;
+    if (this.isSideBar) {
+      setTimeout(() => {this.init = true;}, 300);
+    }
   }
 }
