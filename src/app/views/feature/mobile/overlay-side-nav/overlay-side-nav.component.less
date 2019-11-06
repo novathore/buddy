@@ -6,10 +6,16 @@
   position: absolute;
   width: 80%;
   height: 100%;
-  left: -1500px;
+  left: -2000px;
   transition: all 0.25s;
 
-  &.animate {
+  &.open {
+    transition: all 0.25s;
     left: 0;
+  }
+
+  &.close {
+    transition: all 0.75s;
+    left: -2000px;
   }
 }

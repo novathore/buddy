@@ -6,10 +6,10 @@ import {Component, HostBinding, OnInit} from '@angular/core';
   styleUrls: ['./overlay-side-nav.component.less']
 })
 export class OverlaySideNavComponent implements OnInit {
-  @HostBinding('class.animate') init: boolean = false;
-  constructor() { }
+  @HostBinding('class.open') open: boolean = false;
+  @HostBinding('class.close') close: boolean = false;
 
   ngOnInit() {
-    setTimeout(() => {this.init = true;}, 300);
+    setTimeout(() => {this.open = true;}, 300);
   }
 }

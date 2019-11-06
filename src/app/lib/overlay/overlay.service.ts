@@ -16,15 +16,16 @@ export class AppOverlayService {
     dispatchedComponent: ComponentType<any>,
     positionConfig?: Point,
     panelClass?: string
-  }): ComponentRef<any>  {
+  }): { component: ComponentRef<any>, overlay: OverlayRef }  {
     this.overlayRef = this.createOverlayRef(panelClass);
+
     this.portal = this.createComponentPortal(dispatchedComponent);
 
     const positionStrategy = this.createPositionStrategy(positionConfig);
 
     this.overlayRef.updatePositionStrategy(positionStrategy);
 
-    return this.overlayRef.attach(this.portal);
+    return { component: this.overlayRef.attach(this.portal), overlay: this.overlayRef }
   }
 
   public detachOverlay() {
@@ -36,10 +37,7 @@ export class AppOverlayService {
   private createOverlayRef(panelClass: string) {
     if (this.overlayRef) return this.overlayRef;
 
-    const overlay = this.overlay.create({panelClass, hasBackdrop: true, backdropClass: 'cdk-overlay-transparent-backdrop'});
-    overlay.backdropClick().subscribe(() => this.detachOverlay());
-
-    return overlay;
+    return this.overlay.create({panelClass, hasBackdrop: true, backdropClass: 'cdk-overlay-transparent-backdrop'});
   }
 
   private createPositionStrategy(positionConfig: Point = { x: 0, y: 0}) {
