@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MobileComponent} from './mobile.component';
 import {TobBarModule} from '../../../shared/tob-bar/tob-bar.module';
 import {ViewPortModule} from '../../../shared/view-port/view-port.module';
-import {SideNavModule} from '../../../shared/side-nav/side-nav.module';
+import {OverlaySideNavModule} from './overlay-side-nav/overlay-side-nav.module';
 
 
 @NgModule({
@@ -13,8 +13,8 @@ import {SideNavModule} from '../../../shared/side-nav/side-nav.module';
     CommonModule,
     TobBarModule,
     ViewPortModule,
-    SideNavModule,
-    TobBarModule
+    TobBarModule,
+    OverlaySideNavModule
   ]
 })
 export class MobileModule {

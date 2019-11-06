@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {SideNavComponent} from '../../../shared/side-nav/side-nav.component';
 import {AppOverlayService} from '../../../lib/overlay/overlay.service';
+import {OverlaySideNavComponent} from './overlay-side-nav/overlay-side-nav.component';
 
 @Component({
   selector: 'app-mobile',
@@ -12,10 +12,9 @@ export class MobileComponent {
 
   constructor(private overlay: AppOverlayService) {}
   public showSideBar() {
-    const sideBar = this.overlay.dispatchOverlay({
-      dispatchedComponent: SideNavComponent
+    const component = this.overlay.dispatchOverlay({
+      dispatchedComponent: OverlaySideNavComponent
     });
-    sideBar.instance.asSideBar = true;
-    // sideBar.instance.someOutput.subscribe(val => console.log(val));
+    console.log(component);
   }
 }

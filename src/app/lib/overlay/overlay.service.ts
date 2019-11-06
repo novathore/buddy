@@ -36,7 +36,10 @@ export class AppOverlayService {
   private createOverlayRef(panelClass: string) {
     if (this.overlayRef) return this.overlayRef;
 
-    return this.overlay.create({panelClass});
+    const overlay = this.overlay.create({panelClass, hasBackdrop: true, backdropClass: 'cdk-overlay-transparent-backdrop'});
+    overlay.backdropClick().subscribe(() => this.detachOverlay());
+
+    return overlay;
   }
 
   private createPositionStrategy(positionConfig: Point = { x: 0, y: 0}) {

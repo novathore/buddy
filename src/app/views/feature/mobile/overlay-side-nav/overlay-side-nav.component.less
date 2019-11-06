@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  z-index: 1000;
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: -1500px;
+  transition: all 0.25s;
+
+  &.animate {
+    left: 0;
+  }
+}
