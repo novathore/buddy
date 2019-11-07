@@ -9,6 +9,7 @@ import {Point} from '@angular/cdk/typings/drag-drop/drag-ref';
 export class AppOverlayService {
   private portal: ComponentPortal<any>;
   private overlayRef: OverlayRef;
+  private component: ComponentRef<any>;
 
   constructor(private overlay: Overlay) {}
 
@@ -25,13 +26,18 @@ export class AppOverlayService {
 
     this.overlayRef.updatePositionStrategy(positionStrategy);
 
-    return { component: this.overlayRef.attach(this.portal), overlay: this.overlayRef }
+    if (!this.component) {
+      this.component = this.overlayRef.attach(this.portal);
+    }
+
+    return { component: this.component, overlay: this.overlayRef }
   }
 
   public detachOverlay() {
     if (!this.overlayRef) return;
 
     this.overlayRef.detach();
+    this.component = null;
   }
 
   private createOverlayRef(panelClass: string) {

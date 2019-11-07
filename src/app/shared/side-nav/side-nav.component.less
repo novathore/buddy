@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   flex: auto;
+  overflow: scroll;
 
   &.desktop {
     flex-grow: 12;
@@ -13,4 +14,14 @@
     background-color: rgba(72, 103, 110, 0.95);
     color: whitesmoke;
   }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+  overflow: hidden;
 }

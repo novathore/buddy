@@ -1,8 +1,8 @@
-import {Component, ComponentRef, ElementRef, Inject, Input, OnDestroy} from '@angular/core';
+import {Component, ComponentRef, Inject, Input, OnDestroy} from '@angular/core';
 import {AppOverlayService} from '../../../lib/overlay/overlay.service';
 import {OverlaySideNavComponent} from './overlay-side-nav/overlay-side-nav.component';
-import {BehaviorSubject, fromEvent, Subject} from 'rxjs';
-import {debounceTime, filter, map, switchMap, take, takeLast, takeUntil} from 'rxjs/operators';
+import {fromEvent, Subject} from 'rxjs';
+import {debounceTime, filter, map, switchMap, takeLast, takeUntil} from 'rxjs/operators';
 import {DOCUMENT} from '@angular/common';
 
 const touchDifference = 150;
@@ -77,7 +77,7 @@ export class MobileComponent implements OnDestroy {
   private closeSideBar() {
     if (!this.sideBarComponentInstance) return;
     this.sideBarComponentInstance.instance.close = true;
-    setTimeout(() => this.overlay.detachOverlay(), 700);
+    setTimeout(() => this.overlay.detachOverlay(), 300);
   }
 
   ngOnDestroy(): void {

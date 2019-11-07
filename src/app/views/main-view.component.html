@@ -1,5 +1,5 @@
-<app-mobile *ngIf="true"
+<app-mobile *ngIf="isMobile"
 ></app-mobile>
 
-<app-desktop [currentView]="displayedTextForDesktop" *ngIf="false">
+<app-desktop [currentView]="displayedTextForDesktop" *ngIf="!isMobile">
 </app-desktop>
