@@ -12,13 +12,13 @@ const routes: Routes = [
     path: 'reminders', component: RemindersComponent
   },
   {
-    path: 'settings', component: BookmarksComponent
+    path: 'bookmarks', component: BookmarksComponent
   },
   {
     path: 'journal', component: JournalComponent
   },
   {
-    path: 'bookmarks', component: SettingsComponent
+    path: 'settings', component: SettingsComponent
   },
   {
     path: 'home', component: HomeComponent
