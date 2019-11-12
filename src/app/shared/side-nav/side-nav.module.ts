@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideNavComponent } from './side-nav.component';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -9,7 +10,8 @@ import { SideNavComponent } from './side-nav.component';
   entryComponents: [SideNavComponent],
   exports: [SideNavComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class SideNavModule { }

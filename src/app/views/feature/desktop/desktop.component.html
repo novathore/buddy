@@ -1,6 +1,8 @@
-<div class="side-nav" style="flex-grow: 7">
+<div class="side-nav">
   <app-top-bar></app-top-bar>
-  <app-side-nav class="desktop"></app-side-nav>
+  <app-side-nav></app-side-nav>
 </div>
 
-<app-view-port style="flex-grow: 10"></app-view-port>
+<app-view-port class="desktop">
+  <router-outlet></router-outlet>
+</app-view-port>

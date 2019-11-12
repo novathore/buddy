@@ -4,6 +4,7 @@ import {MobileComponent} from './mobile.component';
 import {TobBarModule} from '../../../shared/tob-bar/tob-bar.module';
 import {ViewPortModule} from '../../../shared/view-port/view-port.module';
 import {OverlaySideNavModule} from './overlay-side-nav/overlay-side-nav.module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {OverlaySideNavModule} from './overlay-side-nav/overlay-side-nav.module';
     TobBarModule,
     ViewPortModule,
     TobBarModule,
-    OverlaySideNavModule
+    OverlaySideNavModule,
+    RouterModule
   ]
 })
 export class MobileModule {

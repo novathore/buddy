@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-view-port',
-  templateUrl: './view-port.component.html',
+  template: ` <ng-content></ng-content> `,
   styleUrls: ['./view-port.component.less']
 })
-export class ViewPortComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class ViewPortComponent {}
