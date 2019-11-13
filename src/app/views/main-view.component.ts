@@ -13,6 +13,7 @@ export class MainViewComponent implements OnInit {
   public displayedTextForDesktop: string = 'Buddy Menu';
 
   ngOnInit() {
+    //TODO store candidate
     this.isMobile = /Mobile/.test(window.navigator.userAgent);
   // this.isMobile = true;
   }
