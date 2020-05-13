@@ -1,45 +1,40 @@
 :host {
   display: flex;
-  height: 15vh;
-  margin: 10px 0;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  justify-content: flex-start;
+  flex-direction: row;
+  height: 50px;
+}
 
-  .rounded-avatar {
-    width: 100px;
-    margin: 5px;
-    font-size: 5vw;
-    color: ghostwhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    border-radius: 12px;
-  }
+.rounded-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  margin: 5px;
+  color: ghostwhite;
+  background-size: cover;
+  border-radius: 12px;
+}
 
+.content {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin: 3px 3px 3px 15px;
+  color: ghostwhite;
+}
+
+&.mobile {
   .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 2vw;
-    background: rgba(0, 0, 0, 0.4);
-    flex: auto;
-    border-radius: 10px;
-    margin: 3px 3px 3px 15px;
-    color: ghostwhite;
   }
+}
 
-  &.mobile {
-    .content {
-      font-size: 5vw;
-    }
-  }
-
-  &.mobile {
-    .rounded-avatar {
-      width: 70px;
-      font-size: 8vw;
-    }
+&.mobile {
+  .rounded-avatar {
+    width: 70px;
+    font-size: 4vw;
   }
 }

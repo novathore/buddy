@@ -1,5 +1,5 @@
-import {Component, HostBinding, Inject, Input, OnInit} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import { Component, HostBinding, Inject, Input, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-bookmark-item',
